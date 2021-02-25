@@ -11,7 +11,7 @@ interface GoogleAdProps {
   slot: string;
   timeout?: number;
 }
-const googleAdId = 'ca-pub-9119027034512982';
+const googleAdId = 'ca-pub-7889035436506661';
 const GoogleAd = ({ classNames = '', slot, timeout = 200 }: GoogleAdProps) => {
   const [googleInit, setGoogleInit] = useState<NodeJS.Timeout | null>(null);
 
