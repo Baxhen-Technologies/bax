@@ -10,7 +10,7 @@ function App() {
         Minha Pagina Hospedada no GitHub Pages Com Anúncios do Google
       </div>
       <GoogleAd slot="394738798" timeout={1000} classNames="page-bottom" />
-      <div>Meu conteúdo</div>
+      <div className="App-header">Meu conteúdo ...</div>
     </div>
   );
 }
