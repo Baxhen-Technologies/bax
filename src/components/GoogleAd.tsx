@@ -12,7 +12,11 @@ interface GoogleAdProps {
   timeout?: number;
 }
 const googleAdId = 'ca-pub-7889035436506661';
-const GoogleAd = ({ classNames = '', slot, timeout = 200 }: GoogleAdProps) => {
+const GoogleAd: React.FC<GoogleAdProps> = ({
+  classNames = '',
+  slot,
+  timeout = 200,
+}) => {
   const [googleInit, setGoogleInit] = useState<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
