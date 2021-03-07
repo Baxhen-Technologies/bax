@@ -10,12 +10,18 @@ import { Landing } from './Landing';
 
 interface AppProps {}
 
+const withoutHeader = ['/'];
+
 export const App: React.FC<AppProps> = () => {
   return (
     <div>
       <Router history={history}>
         <div className="container">
-          <Header />
+          {withoutHeader.includes(window.location.pathname) ? (
+            <></>
+          ) : (
+            <Header />
+          )}
           <Route path="/" exact component={Landing}></Route>
           <Route path="/osasco" exact component={Osasco}></Route>
           <Route path="/sao-paulo" exact component={SaoPaulo}></Route>
