@@ -2,4 +2,4 @@ import { combineReducers } from 'redux';
 
 export interface StoreState {}
 
-export const reducers = combineReducers({});
+export const reducers = combineReducers({ default: () => ({}) });

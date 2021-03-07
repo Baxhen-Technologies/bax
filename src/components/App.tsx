@@ -11,6 +11,7 @@ import { Landing } from './Landing';
 interface AppProps {}
 
 const withoutHeader = ['/'];
+console.log(window.location.pathname);
 
 export const App: React.FC<AppProps> = () => {
   return (
