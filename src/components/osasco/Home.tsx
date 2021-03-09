@@ -96,13 +96,13 @@ const Home: React.FC<HomeProps> = () => {
       </InfoSection>
       <InfoSection title="Ocorrências de grande repercussão no município">
         <ul className="list-group">
-          <li className="list-group-item">
+          <li key="item-01" className="list-group-item">
             A greve da Cobrasma foi em 16 de julho de 1968. Operários
             protestaram contra as mortes de seus colegas em caldeiras, condições
             de trabalhos desfavoráveis e o rebaixamento dos salários. Ato esse
             já um sintoma de resistência contra o Regime Militar da época.
           </li>
-          <li className="list-group-item">
+          <li key="item-02" className="list-group-item">
             A explosão do Osasco Plaza Shopping em 11 de junho de 1996. O motivo
             foi vazamento de gás subterrâneo. Morreram 42 pessoas e 300 outras
             ficaram feridas, algumas gravemente. Esse acidente repercutiu na
