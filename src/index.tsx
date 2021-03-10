@@ -15,7 +15,7 @@ declare global {
   }
 }
 
-const trackingId = 'G-Y7W1J25DH6';
+const trackingId = 'G-0C2EHD0206';
 ReactGA.initialize(trackingId);
 
 history.listen((location) => {
