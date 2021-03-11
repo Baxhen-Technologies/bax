@@ -31,7 +31,7 @@ const Osasco: React.FC<OsascoProps> = () => {
     // { path: `${path}/tourism`, Component: Tourism },
     // { path: `${path}/taxes`, Component: Taxes },
   ].map(({ path, Component }) => (
-    <Route path={path}>
+    <Route key={path} path={path}>
       <Component />
     </Route>
   ));
@@ -40,7 +40,7 @@ const Osasco: React.FC<OsascoProps> = () => {
     <>
       <Header home="/osasco" links={links} />
       <Switch>
-        <Route exact path={path}>
+        <Route key="home" exact path={path}>
           <Home />
         </Route>
         {nested}
