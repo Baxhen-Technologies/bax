@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Router, Route } from 'react-router-dom';
+import ReactGA from 'react-ga';
 
 import history from '../history';
 import { Osasco } from './osasco';
@@ -8,6 +9,9 @@ import { SaoPaulo } from './SaoPaulo';
 import { Landing } from './Landing';
 
 interface AppProps {}
+
+const trackingId = 'G-0C2EHD0206';
+ReactGA.initialize(trackingId);
 
 export const App: React.FC<AppProps> = () => {
   return (
@@ -22,3 +26,8 @@ export const App: React.FC<AppProps> = () => {
     </div>
   );
 };
+
+history.listen((location) => {
+  ReactGA.set({ page: location.pathname });
+  ReactGA.pageview(location.pathname);
+});

@@ -26,6 +26,10 @@ const Osasco: React.FC<OsascoProps> = () => {
     { path: `${path}/security`, Component: Security },
     { path: `${path}/economics`, Component: Economics },
     { path: `${path}/demography`, Component: Demography },
+    // { path: `${path}/education`, Component: Education },
+    // { path: `${path}/curiosities`, Component: Curiosities },
+    // { path: `${path}/tourism`, Component: Tourism },
+    // { path: `${path}/taxes`, Component: Taxes },
   ].map(({ path, Component }) => (
     <Route path={path}>
       <Component />

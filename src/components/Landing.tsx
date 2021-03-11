@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { GoogleAd } from './GoogleAd';
+import ReactGA from 'react-ga';
+import { App, setInitialLoad } from '../actions';
+import { StoreState } from '../reducers';
 
-interface LandingProps {}
+interface LandingProps {
+  app: App;
+  setInitialLoad: typeof setInitialLoad;
+  location: Location;
+}
 
-export const Landing: React.FC<LandingProps> = () => {
+const _Landing: React.FC<LandingProps> = ({
+  location,
+  app,
+  setInitialLoad,
+}) => {
+  useEffect(() => {
+    if (!app.isInitialLoad) {
+      ReactGA.pageview(location.pathname);
+      setInitialLoad(true);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div style={{ textAlign: 'center' }}>
       <h1>Município</h1>
@@ -24,3 +43,9 @@ export const Landing: React.FC<LandingProps> = () => {
     </div>
   );
 };
+
+const mapStateToProps = ({ app }: StoreState): { app: App } => {
+  return { app };
+};
+
+export const Landing = connect(mapStateToProps, { setInitialLoad })(_Landing);

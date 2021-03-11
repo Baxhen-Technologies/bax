@@ -1,3 +1,7 @@
-export enum ActionTypes {}
+import { SetInitialLoadAction } from './app';
 
-export type Action = any;
+export enum ActionTypes {
+  setInitialLoad,
+}
+
+export type Action = SetInitialLoadAction;

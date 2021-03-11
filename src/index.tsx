@@ -15,14 +15,6 @@ declare global {
   }
 }
 
-const trackingId = 'G-0C2EHD0206';
-ReactGA.initialize(trackingId);
-
-history.listen((location) => {
-  ReactGA.set({ page: location.pathname });
-  ReactGA.pageview(location.pathname);
-});
-
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
